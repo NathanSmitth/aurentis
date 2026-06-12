@@ -37,32 +37,32 @@ export const services = [
 
 export const portfolio = [
   {
-    id: "project-1",
-    name: "Coming Soon",
-    industry: "Project 01",
+    id: "maison-noir",
+    name: "Maison Noir",
+    industry: "Fine Dining · Fredericton, NB",
     image: "",
-    slug: "",
+    url: "https://maison-noir-mu.vercel.app",
   },
   {
     id: "project-2",
     name: "Coming Soon",
     industry: "Project 02",
     image: "",
-    slug: "",
+    url: "",
   },
   {
     id: "project-3",
     name: "Coming Soon",
     industry: "Project 03",
     image: "",
-    slug: "",
+    url: "",
   },
   {
     id: "project-4",
     name: "Coming Soon",
     industry: "Project 04",
     image: "",
-    slug: "",
+    url: "",
   },
 ];
 
