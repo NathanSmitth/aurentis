@@ -116,6 +116,76 @@ function BaysideAutoPreview() {
   );
 }
 
+function NorthPeakPreview() {
+  return (
+    <div
+      className="absolute inset-0 overflow-hidden"
+      style={{
+        background: "#1e3a5f",
+        backgroundImage: `repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 18px,
+          rgba(255,255,255,0.03) 18px,
+          rgba(255,255,255,0.03) 19px
+        )`,
+      }}
+    >
+      {/* Faux nav */}
+      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 py-3 border-b border-white/[0.08]">
+        <div className="flex flex-col leading-none">
+          <span className="text-[7px] tracking-widest font-bold uppercase" style={{ color: "#FFFFFF" }}>
+            NorthPeak
+          </span>
+          <span className="text-[6px] tracking-wider font-medium uppercase" style={{ color: "rgba(255,255,255,0.45)" }}>
+            Plumbing & Heating
+          </span>
+        </div>
+        <div className="flex gap-3">
+          {["Services", "About", "Contact"].map((l) => (
+            <span key={l} className="text-[6px] tracking-[0.18em] uppercase" style={{ color: "rgba(255,255,255,0.3)" }}>
+              {l}
+            </span>
+          ))}
+        </div>
+      </div>
+      {/* Hero content */}
+      <div className="absolute inset-0 flex flex-col items-start justify-center gap-2 px-5 pb-4 pt-10">
+        <span
+          className="text-[6px] tracking-[0.22em] uppercase px-2 py-0.5 rounded-full font-semibold"
+          style={{ background: "#dc2626", color: "#FFFFFF" }}
+        >
+          24/7 Emergency Service
+        </span>
+        <div className="flex flex-col leading-snug gap-0.5 mt-1">
+          <span className="text-[10px] font-black tracking-tight" style={{ color: "#FFFFFF" }}>
+            Fredericton&apos;s Trusted
+          </span>
+          <span className="text-[10px] font-black tracking-tight" style={{ color: "#FFFFFF" }}>
+            Plumbing & Heating
+          </span>
+          <span className="text-[10px] font-black tracking-tight" style={{ color: "#FFFFFF" }}>
+            Experts
+          </span>
+        </div>
+        <div className="flex gap-1.5 mt-1">
+          <span className="text-[6px] px-2 py-0.5 rounded font-semibold" style={{ background: "#FFFFFF", color: "#1e3a5f" }}>
+            Free Quote
+          </span>
+          <span className="text-[6px] px-2 py-0.5 rounded font-semibold" style={{ background: "#dc2626", color: "#FFFFFF" }}>
+            Emergency Call
+          </span>
+        </div>
+      </div>
+      {/* Bottom fade */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-10"
+        style={{ background: "linear-gradient(to top, #152d4a, transparent)" }}
+      />
+    </div>
+  );
+}
+
 function EmptyPreview() {
   return (
     <div className="absolute inset-0 flex items-center justify-center">
@@ -169,6 +239,8 @@ function ProjectCard({
                   <MaisonNoirPreview />
                 ) : project.id === "bayside-auto" ? (
                   <BaysideAutoPreview />
+                ) : project.id === "northpeak" ? (
+                  <NorthPeakPreview />
                 ) : (
                   <EmptyPreview />
                 )}

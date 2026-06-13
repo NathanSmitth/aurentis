@@ -51,11 +51,11 @@ export const portfolio = [
     url: "https://bayside-auto.vercel.app",
   },
   {
-    id: "project-3",
-    name: "Coming Soon",
-    industry: "Project 03",
+    id: "northpeak",
+    name: "NorthPeak Plumbing & Heating",
+    industry: "Plumbing & Trades · Fredericton, NB",
     image: "",
-    url: "",
+    url: "https://northpeak-plumbing.vercel.app",
   },
   {
     id: "project-4",
