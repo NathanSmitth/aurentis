@@ -56,6 +56,66 @@ function MaisonNoirPreview() {
   );
 }
 
+function BaysideAutoPreview() {
+  return (
+    <div
+      className="absolute inset-0 overflow-hidden"
+      style={{
+        background: "#1B2A4A",
+        backgroundImage: `
+          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+        `,
+        backgroundSize: "28px 28px",
+      }}
+    >
+      {/* Faux nav */}
+      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 py-3 border-b border-white/[0.07]">
+        <div className="flex flex-col leading-none">
+          <span className="text-[7px] tracking-widest font-bold uppercase" style={{ color: "#FFFFFF" }}>
+            BAYSIDE AUTO
+          </span>
+          <span className="text-[7px] tracking-widest font-bold uppercase" style={{ color: "#E8612C" }}>
+            & REPAIR
+          </span>
+        </div>
+        <div className="flex gap-3">
+          {["Services", "About", "Book"].map((l) => (
+            <span key={l} className="text-[6px] tracking-[0.18em] uppercase" style={{ color: "rgba(255,255,255,0.3)" }}>
+              {l}
+            </span>
+          ))}
+        </div>
+      </div>
+      {/* Hero content */}
+      <div className="absolute inset-0 flex flex-col items-start justify-center gap-2 px-5 pb-4 pt-10">
+        <span
+          className="text-[6px] tracking-[0.25em] uppercase px-2 py-1 rounded-full font-bold"
+          style={{ background: "#E8612C", color: "#FFFFFF" }}
+        >
+          20+ Years Serving Moncton
+        </span>
+        <div className="flex flex-col leading-none gap-0.5 mt-1">
+          <span className="text-[11px] font-black uppercase tracking-tight" style={{ color: "#FFFFFF" }}>
+            Moncton&apos;s Most
+          </span>
+          <span className="text-[11px] font-black uppercase tracking-tight" style={{ color: "#E8612C" }}>
+            Trusted
+          </span>
+          <span className="text-[11px] font-black uppercase tracking-tight" style={{ color: "#FFFFFF" }}>
+            Auto Shop
+          </span>
+        </div>
+      </div>
+      {/* Bottom fade */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-10"
+        style={{ background: "linear-gradient(to top, #1B2A4A, transparent)" }}
+      />
+    </div>
+  );
+}
+
 function EmptyPreview() {
   return (
     <div className="absolute inset-0 flex items-center justify-center">
@@ -85,7 +145,7 @@ function ProjectCard({
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const hasContent = project.id !== "project-2" && project.id !== "project-3" && project.id !== "project-4";
+  const hasContent = !!project.url;
 
   const cardContent = (
     <motion.div
@@ -105,7 +165,13 @@ function ProjectCard({
     >
       {/* Preview area */}
       <div className="relative aspect-[16/10] overflow-hidden bg-[#0F0F12]">
-        {project.id === "maison-noir" ? <MaisonNoirPreview /> : <EmptyPreview />}
+        {project.id === "maison-noir" ? (
+                  <MaisonNoirPreview />
+                ) : project.id === "bayside-auto" ? (
+                  <BaysideAutoPreview />
+                ) : (
+                  <EmptyPreview />
+                )}
         {/* Hover overlay for live projects */}
         {hasContent && (
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"

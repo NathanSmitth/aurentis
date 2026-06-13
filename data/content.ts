@@ -44,11 +44,11 @@ export const portfolio = [
     url: "https://maison-noir-mu.vercel.app",
   },
   {
-    id: "project-2",
-    name: "Coming Soon",
-    industry: "Project 02",
+    id: "bayside-auto",
+    name: "Bayside Auto & Repair",
+    industry: "Auto & Garage · Moncton, NB",
     image: "",
-    url: "",
+    url: "https://bayside-auto.vercel.app",
   },
   {
     id: "project-3",
