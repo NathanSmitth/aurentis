@@ -186,6 +186,54 @@ function NorthPeakPreview() {
   );
 }
 
+function EmberLoomPreview() {
+  return (
+    <div className="absolute inset-0 overflow-hidden" style={{ background: "#F9F6F1" }}>
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse 100% 80% at 30% 110%, rgba(184,134,90,0.1) 0%, transparent 60%)",
+        }}
+      />
+      {/* Faux nav */}
+      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 py-3 border-b border-[rgba(44,31,20,0.08)]">
+        <span
+          className="text-[9px] tracking-widest italic"
+          style={{ color: "#2C1F14", fontFamily: "Georgia, serif" }}
+        >
+          Ember &amp; Loom
+        </span>
+        <div className="flex gap-3">
+          {["Shop", "Story", "Contact"].map((l) => (
+            <span key={l} className="text-[6px] tracking-[0.18em] uppercase" style={{ color: "rgba(44,31,20,0.35)" }}>
+              {l}
+            </span>
+          ))}
+        </div>
+      </div>
+      {/* Hero content */}
+      <div className="absolute inset-0 flex flex-col items-start justify-center gap-1.5 px-5 pb-4 pt-10">
+        <span className="text-[6px] tracking-[0.28em] uppercase" style={{ color: "#B8865A" }}>
+          New Collection — Spring
+        </span>
+        <div className="flex flex-col leading-none gap-0.5 mt-1">
+          <span className="text-[13px] leading-tight italic" style={{ color: "#2C1F14", fontFamily: "Georgia, serif", letterSpacing: "-0.02em" }}>
+            A home that
+          </span>
+          <span className="text-[13px] leading-tight italic" style={{ color: "#2C1F14", fontFamily: "Georgia, serif", letterSpacing: "-0.02em" }}>
+            feels like you.
+          </span>
+        </div>
+        <span className="text-[6px] tracking-[0.18em] uppercase mt-1.5" style={{ color: "#2C1F14", opacity: 0.45 }}>
+          Explore Collection →
+        </span>
+      </div>
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-10" style={{ background: "linear-gradient(to top, #F9F6F1, transparent)" }} />
+    </div>
+  );
+}
+
 function EmptyPreview() {
   return (
     <div className="absolute inset-0 flex items-center justify-center">
@@ -241,6 +289,8 @@ function ProjectCard({
                   <BaysideAutoPreview />
                 ) : project.id === "northpeak" ? (
                   <NorthPeakPreview />
+                ) : project.id === "ember-loom" ? (
+                  <EmberLoomPreview />
                 ) : (
                   <EmptyPreview />
                 )}

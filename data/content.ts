@@ -58,11 +58,11 @@ export const portfolio = [
     url: "https://northpeak-plumbing.vercel.app",
   },
   {
-    id: "project-4",
-    name: "Coming Soon",
-    industry: "Project 04",
+    id: "ember-loom",
+    name: "Ember & Loom",
+    industry: "Retail & Lifestyle",
     image: "",
-    url: "",
+    url: "https://ember-loom-alfn.vercel.app",
   },
 ];
 
