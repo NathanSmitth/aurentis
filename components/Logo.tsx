@@ -24,7 +24,7 @@ export default function Logo({ height = 36, className = "" }: LogoProps) {
 
   return (
     <Image
-      src="/images/logo.png?v=2"
+      src="/images/aurentis.logo.png"
       alt="Aurentis"
       height={height}
       width={height * 3.3}
