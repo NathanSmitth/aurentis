@@ -6,7 +6,9 @@ export default function Footer() {
     <footer className="border-t border-[#1E1E24] py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Logo */}
-        <Logo height={28} className="opacity-80" />
+        <div style={{ transform: "translateY(-5mm)" }}>
+          <Logo height={144} className="opacity-100" />
+        </div>
 
         {/* Copyright */}
         <p className="text-[#8A8A96] text-sm">{footer.copyright}</p>

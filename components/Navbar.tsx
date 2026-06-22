@@ -33,7 +33,7 @@ export default function Navbar() {
           className="flex items-center bg-transparent p-0 border-0 outline-none"
           aria-label="Aurentis home"
         >
-          <Logo height={60} />
+          <Logo height={90} />
         </button>
 
         {/* Nav links */}
