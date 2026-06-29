@@ -6,7 +6,7 @@ export const navigation = {
 export const hero = {
   headline: "We build websites that get you more customers.",
   subheadline:
-    "Professional web design for local businesses in New Brunswick.",
+    "Professional web design for local businesses across Atlantic Canada.",
   primaryCta: "See Our Work",
   secondaryCta: "Get in Touch",
 };
@@ -31,7 +31,7 @@ export const services = [
     icon: "support",
     title: "Ongoing Support & Updates",
     description:
-      "Monthly plans to keep your site fresh. Security patches, content updates, and performance tuning.",
+      "Monthly plans to keep your site fresh — hosting, custom domains, and SSL included. Security patches, content updates, and performance tuning, all handled for you.",
   },
 ];
 
@@ -69,7 +69,7 @@ export const portfolio = [
 export const contact = {
   headline: "Let's build something great.",
   subtext: "Get a free quote for your business website.",
-  email: "hello@aurentis.ca",
+  email: "aurentis.agency@gmail.com",
   submitLabel: "Send Message",
 };
 

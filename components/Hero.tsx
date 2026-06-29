@@ -28,7 +28,7 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="inline-block mb-6 text-[#4A8FD4] text-sm font-medium tracking-widest uppercase">
-            Fredericton, NB
+            Atlantic Canada
           </span>
         </motion.div>
 
