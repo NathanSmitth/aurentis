@@ -14,14 +14,27 @@ export default function Contact() {
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!form.name || !form.email || !form.message) return;
     setStatus("sending");
-    // Placeholder — wire to API route or email service
-    await new Promise((r) => setTimeout(r, 1000));
-    setStatus("sent");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("sent");
+        setForm({ name: "", business: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const inputClass =
@@ -85,7 +98,7 @@ export default function Contact() {
                   Message received.
                 </h3>
                 <p className="text-[#8A8A96] text-sm">
-                  We&apos;ll be in touch within one business day.
+                  Message sent — I&apos;ll get back to you soon.
                 </p>
               </div>
             ) : (
@@ -165,6 +178,18 @@ export default function Contact() {
                 >
                   {status === "sending" ? "Sending..." : contact.submitLabel}
                 </button>
+                {status === "error" && (
+                  <p className="text-sm text-red-400 text-center">
+                    Something went wrong. Email me directly at{" "}
+                    <a
+                      href={`mailto:${contact.email}`}
+                      className="underline hover:text-red-300"
+                    >
+                      {contact.email}
+                    </a>
+                    .
+                  </p>
+                )}
               </form>
             )}
           </motion.div>
