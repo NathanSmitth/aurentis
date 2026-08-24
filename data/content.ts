@@ -6,7 +6,7 @@ export const navigation = {
 export const hero = {
   headline: "We build websites that get you more customers.",
   subheadline:
-    "Professional web design for local businesses across Atlantic Canada.",
+    "Professional web design for local businesses across Canada.",
   primaryCta: "See Our Work",
   secondaryCta: "Get in Touch",
 };
