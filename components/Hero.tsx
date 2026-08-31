@@ -57,7 +57,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button
-            onClick={() => scrollTo("work")}
+            onClick={() => scrollTo("web-design")}
             className="px-7 py-3.5 rounded-md bg-[#4A8FD4] hover:bg-[#3a7bc4] text-white font-medium text-base transition-colors duration-200"
           >
             {hero.primaryCta}

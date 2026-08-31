@@ -14,7 +14,7 @@ export default function Navbar() {
   }, []);
 
   const handleNav = (id: string) => {
-    const el = document.getElementById(id.toLowerCase());
+    const el = document.getElementById(id.toLowerCase().replace(/\s+/g, "-"));
     el?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -39,13 +39,19 @@ export default function Navbar() {
         {/* Nav links */}
         <div className="hidden md:flex items-center gap-8">
           {navigation.links.map((link) => (
-            <button
-              key={link}
-              onClick={() => handleNav(link)}
-              className="text-sm text-[#8A8A96] hover:text-[#F0EEE8] transition-colors duration-200"
-            >
-              {link}
-            </button>
+            <div key={link} className="relative">
+              <button
+                onClick={() => handleNav(link)}
+                className="text-sm text-[#8A8A96] hover:text-[#F0EEE8] transition-colors duration-200"
+              >
+                {link}
+              </button>
+              {link === "Automations" && (
+                <span className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 px-1.5 py-0.5 rounded-full bg-[#4A8FD4] text-[#0D0D0F] text-[9px] font-bold uppercase tracking-wider leading-none whitespace-nowrap">
+                  New
+                </span>
+              )}
+            </div>
           ))}
         </div>
 

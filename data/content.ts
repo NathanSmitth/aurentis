@@ -1,14 +1,41 @@
 export const navigation = {
-  links: ["Work", "Services", "Contact"],
+  links: ["Web Design", "Automations", "Contact"],
   cta: "Get a Quote",
 };
 
 export const hero = {
-  headline: "We build websites that get you more customers.",
+  headline: "We build websites and automations that grow your business.",
   subheadline:
-    "Professional web design for local businesses across Canada.",
+    "Web design and automations for local businesses across Canada.",
   primaryCta: "See Our Work",
   secondaryCta: "Get in Touch",
+};
+
+export const whatWeDo = {
+  kicker: "What We Do",
+  headline: "Two ways we grow your business.",
+  linkLabel: "See how",
+  cards: [
+    {
+      id: "web-design",
+      icon: "layout",
+      title: "Web Design",
+      description:
+        "Custom-built websites that get you found and get you customers — mobile-first, fast, and built to last.",
+    },
+    {
+      id: "automations",
+      icon: "phone",
+      title: "AI Automations",
+      description:
+        "Missed-call text-back, review management, and smart follow-up — automations that keep customers from slipping away.",
+    },
+  ],
+};
+
+export const webDesign = {
+  kicker: "Web Design",
+  headline: "Everything your site needs.",
 };
 
 export const services = [
@@ -35,36 +62,35 @@ export const services = [
   },
 ];
 
-export const portfolio = [
-  {
-    id: "maison-noir",
-    name: "Maison Noir",
-    industry: "Fine Dining · Fredericton, NB",
-    image: "",
-    url: "https://maison-noir-mu.vercel.app",
-  },
-  {
-    id: "bayside-auto",
-    name: "Bayside Auto & Repair",
-    industry: "Auto & Garage · Moncton, NB",
-    image: "",
-    url: "https://bayside-auto.vercel.app",
-  },
-  {
-    id: "northpeak",
-    name: "NorthPeak Plumbing & Heating",
-    industry: "Plumbing & Trades · Fredericton, NB",
-    image: "",
-    url: "https://northpeak-plumbing.vercel.app",
-  },
-  {
-    id: "ember-loom",
-    name: "Ember & Loom",
-    industry: "Retail & Lifestyle",
-    image: "",
-    url: "https://ember-loom-alfn.vercel.app",
-  },
-];
+export const automations = {
+  kicker: "Automations",
+  headline: "Never miss a customer again.",
+  subheadline:
+    "Automations that answer, follow up, and stay on top of your reputation — while you run the business.",
+  rows: [
+    {
+      id: "missed-call",
+      number: "01",
+      title: "Missed-Call Text-Back",
+      description:
+        "Every call you can't pick up gets an instant text reply — so a busy shift never costs you a customer.",
+    },
+    {
+      id: "reviews",
+      number: "02",
+      title: "Review Management",
+      description:
+        "Automatic review requests after every visit, plus auto-drafted replies that keep your reputation active without extra work.",
+    },
+    {
+      id: "reminders",
+      number: "03",
+      title: "Smart Reminders & Follow-Up",
+      description:
+        "Automated appointment reminders cut no-shows, and instant follow-up on new leads means nothing slips through.",
+    },
+  ],
+};
 
 export const contact = {
   headline: "Let's build something great.",

@@ -8,14 +8,14 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Aurentis — Web Design for Local Businesses",
+  title: "Aurentis — Web Design & Automations for Local Businesses",
   description:
-    "Professional web design for local businesses across Canada. We build websites that get you more customers.",
+    "Websites and automations for local businesses across Atlantic Canada — sites that get you customers, and automations that keep them. Get a free quote.",
   keywords: ["web design", "Canada", "local business"],
   openGraph: {
-    title: "Aurentis — Web Design for Local Businesses",
+    title: "Aurentis — Web Design & Automations for Local Businesses",
     description:
-      "Professional web design for local businesses across Canada.",
+      "Websites and automations for local businesses across Atlantic Canada — sites that get you customers, and automations that keep them. Get a free quote.",
     url: "https://aurentis.ca",
     siteName: "Aurentis",
   },

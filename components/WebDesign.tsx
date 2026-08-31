@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { services } from "@/data/content";
+import { services, webDesign } from "@/data/content";
+import { Reveal } from "@/components/ScrollReveal";
 
 const icons: Record<string, React.ReactNode> = {
   design: (
@@ -62,19 +61,9 @@ function ServiceCard({
   service: (typeof services)[0];
   index: number;
 }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 32 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.12,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+    <Reveal
+      delay={index * 120}
       className="group relative p-8 rounded-xl bg-[#141417] border border-[#1E1E24] hover:border-[#4A8FD4]/40 transition-colors duration-300"
     >
       <div className="inline-flex p-2.5 rounded-lg bg-[#4A8FD4]/10 text-[#4A8FD4] mb-5">
@@ -86,32 +75,22 @@ function ServiceCard({
       <p className="text-[#8A8A96] leading-relaxed text-sm">
         {service.description}
       </p>
-    </motion.div>
+    </Reveal>
   );
 }
 
-export default function Services() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-
+export default function WebDesign() {
   return (
-    <section id="services" className="relative z-10 py-28 px-6">
-
+    <section id="web-design" className="relative z-10 py-28 px-6">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16"
-        >
+        <Reveal className="mb-16">
           <span className="text-[#4A8FD4] text-sm font-medium tracking-widest uppercase">
-            Services
+            {webDesign.kicker}
           </span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[#F0EEE8] tracking-tight">
-            What We Do
+            {webDesign.headline}
           </h2>
-        </motion.div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((service, i) => (
@@ -122,4 +101,3 @@ export default function Services() {
     </section>
   );
 }
-

@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Portfolio from "@/components/Portfolio";
+import WhatWeDo from "@/components/WhatWeDo";
+import WebDesign from "@/components/WebDesign";
+import Automations from "@/components/Automations";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { BeamsBackground } from "@/components/ui/beams-background";
@@ -12,8 +13,9 @@ export default function Home() {
       <BeamsBackground />
       <Navbar />
       <Hero />
-      <Services />
-      <Portfolio />
+      <WhatWeDo />
+      <WebDesign />
+      <Automations />
       <Contact />
       <Footer />
     </main>
