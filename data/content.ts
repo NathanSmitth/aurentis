@@ -14,7 +14,6 @@ export const hero = {
 export const whatWeDo = {
   kicker: "What We Do",
   headline: "Two ways we grow your business.",
-  linkLabel: "See how",
   cards: [
     {
       id: "web-design",
